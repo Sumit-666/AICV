@@ -1,0 +1,50 @@
+.App {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+}
+
+.main-content {
+  position: relative;
+  flex: 1;
+  background: #F3F3F3;
+  opacity: 1;
+  padding: 20px;
+  margin-left: 260px;
+  min-height: 100vh; 
+  box-sizing: border-box;
+  position: relative; 
+}
+
+.profile-button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: absolute; 
+  top: 72px; 
+  right: 20px;
+  height: 54px; 
+  background: transparent; 
+  border-radius: 27px; 
+  opacity: 1;
+}
+
+.profile-container {
+  display: flex;
+  margin-top: -100px;
+  margin-right: 40px;
+  align-items: center;
+}
+
+.username {
+  margin-right: 10px;
+  font: normal normal 600 16px/20px Poppins;
+  color: #151515;
+}
+
+.profile-container img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}

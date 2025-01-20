@@ -8,25 +8,28 @@
   position: relative;
   flex: 1;
   background: #F3F3F3;
-  opacity: 1;
   padding: 20px;
-  margin-left: 260px;
-  min-height: 100vh; 
+  margin-left: 250px;
+  min-height: 100vh;
   box-sizing: border-box;
-  position: relative; 
+  transition: margin-left 0.3s ease;
+  z-index: 2;
+}
+
+.main-content.shifted {
+  margin-left: 0;
 }
 
 .profile-button {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  position: absolute; 
-  top: 72px; 
+  position: absolute;
+  top: 72px;
   right: 20px;
-  height: 54px; 
-  background: transparent; 
-  border-radius: 27px; 
-  opacity: 1;
+  height: 54px;
+  background: transparent;
+  border-radius: 27px;
 }
 
 .profile-container {
@@ -47,4 +50,14 @@
   height: 40px;
   border-radius: 50%;
   object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .App {
+    display: block;
+  }
+  .main-content {
+    margin-left: 0;
+    padding-left: 10px;
+  }
 }

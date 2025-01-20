@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Sidebar from './components/sidebar';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import SearchCV from './components/pages/search-cv';
@@ -7,16 +7,22 @@ import TransactionHistory from './components/pages/transaction-history';
 import SearchHistory from './components/pages/search-history';
 import Profile from './components/pages/profile';
 import Settings from './components/pages/settings';
-import ProfileImage from './components/images/2335129.png'
+import ProfileImage from './components/images/2335129.png';
 import './App.css';
 
 function App() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
   return (
     <Router>
       <div className="App">
-        <Sidebar />
-        
-        <div className="main-content">
+        <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+
+        <div className={`main-content ${isSidebarOpen ? '' : 'shifted'}`}>
           <Routes>
             <Route path="/search-cv" element={<SearchCV />} />
             <Route path="/shortlisted-cv" element={<ShortlistedCV />} />
@@ -25,15 +31,15 @@ function App() {
             <Route path="/profile" element={<Profile />} />
             <Route path="/settings" element={<Settings />} />
           </Routes>
-          </div>
-          <div className="profile-button">
+        </div>
+
+        <div className="profile-button">
           <div className="profile-container">
-          <span className="username">Hi, Username</span>
-          <img src={ProfileImage} alt="Profile" />
+            <span className="username">Hi, Username</span>
+            <img src={ProfileImage} alt="Profile" />
           </div>
         </div>
-        </div>
-     
+      </div>
     </Router>
   );
 }

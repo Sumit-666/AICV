@@ -26,8 +26,8 @@ function TransactionHistory() {
 
   const listContainerStyle = {
     position: 'absolute',
-     width: 'calc(100% - 250px)', 
-    height: 'calc(60vh - 40px)',
+    width: 'calc(100% - auto)', 
+    height: 'calc(60vh - auto)',
     top: '160px',
     left: '100px',
     // width: '80vw',
